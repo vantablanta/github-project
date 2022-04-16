@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserInfoService } from 'src/app/service/user-info.service';
 import { UserClass } from 'src/app/user-class';
-import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faUsers, faHeart, faFileCode, faEye } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-landing',
@@ -10,6 +11,9 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons';
 })
 export class LandingComponent implements OnInit {
   faUsers = faUsers
+  faHeart = faHeart
+  faFileCode = faFileCode
+  faEye = faEye
 
   userInfo:UserClass = new UserClass("",0,0,0,"","")
   userRepos:any =[]
