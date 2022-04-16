@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserClass } from '../user-class';
 import { environment } from 'src/environments/environment';
@@ -17,10 +17,12 @@ export class UserInfoService {
 
   constructor(private http: HttpClient) { }
 
-  getUser():Observable<UserClass>{
+  getUser(): Observable<UserClass> {
     return this.http.get<UserClass>(this.userUrl)
+    {}
+
   }
-  getUserRepos(){
+  getUserRepos() {
     return this.http.get(this.repoUrl,
       {
         headers: new HttpHeaders({

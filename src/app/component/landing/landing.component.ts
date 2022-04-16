@@ -29,7 +29,6 @@ export class LandingComponent implements OnInit {
     this.userInfoService.getUserRepos().subscribe(
       (response: any)=>{
         this.userRepos = response
-        console.log(this.userRepos)
     })
     
   }
