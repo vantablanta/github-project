@@ -8,7 +8,7 @@
     width: 100%;
     background-image: linear-gradient(#199bf3, #7bc8f9);
     border-radius: 25px;
-    border-color:#7bc8f9 ;
+    border-color: #7bc8f9;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -23,8 +23,3 @@
     font-weight: 600;
     color: #fff
 }
-
-
-
-
-
