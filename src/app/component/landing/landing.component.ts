@@ -17,10 +17,6 @@ export class LandingComponent implements OnInit {
 
   userInfo:UserClass = new UserClass("",0,0,0,"","")
   userRepos:any =[]
-  color!: string
-  colors: string[] = ["#f59840","#7bc8f9", "#32c48a"]
-
-  
 
   constructor(private userInfoService: UserInfoService) { }
 
@@ -33,10 +29,9 @@ export class LandingComponent implements OnInit {
     this.userInfoService.getUserRepos().subscribe(
       (response: any)=>{
         this.userRepos = response
+        console.log(this.userRepos)
     })
-    for(let c = 1; c < this.colors.length; c++){
-         this.color = this.colors[c]
-    }
+    
   }
 
 }

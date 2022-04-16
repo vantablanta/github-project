@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserClass } from '../user-class';
 import { environment } from 'src/environments/environment';
@@ -10,17 +10,24 @@ import { environment } from 'src/environments/environment';
 export class UserInfoService {
 
   user = "vantablanta"
-  userUrl = "https://api.github.com/users"
-  repoUrl = "https://api.github.com/users/vantablanta/repos"
+  userUrl = `https://api.github.com/users/${this.user}`
+  repoUrl = `https://api.github.com/users/${this.user}/repos?per_page=40`
+  // "https://api.github.com/users/vantablanta/repos?per_page=100"
 
 
   constructor(private http: HttpClient) { }
 
   getUser():Observable<UserClass>{
-    return this.http.get<UserClass>(`${this.userUrl}/${this.user}`)
+    return this.http.get<UserClass>(this.userUrl)
   }
   getUserRepos(){
-    return this.http.get(this.repoUrl)
+    return this.http.get(this.repoUrl,
+      {
+        headers: new HttpHeaders({
+          Authorization: environment.apiKey
+        })
+      }
+    )
   }
 }
 
