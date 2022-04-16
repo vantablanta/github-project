@@ -1,5 +1,4 @@
 export class UserClass {
-    name!: string
     login!: string
     public_repos!: number
     followers!: number
@@ -7,8 +6,7 @@ export class UserClass {
     avatar_url!: string
     url!: string
 
-    constructor(name: string, login: string, public_repos: number, followers: number, following: number, avatar_url: string, url: string) {
-        this.name = name
+    constructor(login: string, public_repos: number, followers: number, following: number, avatar_url: string, url: string) {
         this.login = login
         this.public_repos = public_repos
         this.followers = followers

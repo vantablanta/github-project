@@ -1,27 +1,46 @@
-<div class="container" >
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-10">
-            <div class="card mt-3">
-                <div class="content row">
-                    <div class="col-md-6">
-                    <!-- USER INFO
-                        User Image
-                        info
-                        repo count
-                        followers
-                    -->
-                    </div>
-                    <div class="col-md-6">
-                    <!-- REPOS
-                        User Image
-                        info
-                        repo count
-                        followers
-                    -->
-                    </div>
+<div class="container">
+    <div class="card">
+        <div class="content row">
+            <div class="col-md-6 p-5">
+                <img class="rounded w-50 mt-3 mb-3" [src]="userInfo.avatar_url">
+                <h1 class="fs-1">{{userInfo.login}}</h1>
+                <div class="position-relative mt-3">
+                    <span class="badge bg-light text-dark rounded p-2 mt-1">
+                        Following <fa-icon class="ms-2" [icon]="faUsers"></fa-icon>
+                        <span class="position-absolute top-0 p-1 mb-2 text-dark translate-middle badge rounded-pill"
+                            [ngStyle]="{'background-color': '#f59840'}">
+                            {{userInfo.following}}
+                        </span>
+                    </span>
+                </div>
+                <div class="position-relative mt-3">
+                    <span class="badge bg-light text-dark rounded p-2 mt-1">
+                        Followers<fa-icon class="ms-2" [icon]="faUsers"></fa-icon>
+                        <span class="position-absolute top-0 p-1 mb-2 text-dark translate-middle badge rounded-pill"
+                            [ngStyle]="{'background-color': '#f59840'}">
+                            {{userInfo.followers}}
+                        </span>
+                    </span>
+                </div>
+            </div>
 
+            <div class="col-md-6 row p-5">
+                <p class="float-end">Repositories</p> 
+                <div class="col-md-3 p-2" *ngFor="let repo of userRepos index as i">
+                    <span class="badge bg-light text-dark rounded p-2" [ngStyle]="{'background-color': color}" >
+                        {{repo.name}}
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- USER INFO
+                            this.login = login
+                            this.public_repos = public_repos
+                            this.followers = followers
+                            this.following = following
+                            this.avatar_url = avatar_url
+                            this.url = url
+                    -->
