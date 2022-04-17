@@ -10,17 +10,16 @@ import { environment } from 'src/environments/environment';
 export class UserInfoService {
 
   user = "vantablanta"
-  userUrl = `https://api.github.com/users/${this.user}`
+  userUrl = `https://api.github.com/users`
   repoUrl = `https://api.github.com/users/${this.user}/repos?per_page=40`
   // "https://api.github.com/users/vantablanta/repos?per_page=100"
 
 
   constructor(private http: HttpClient) { }
 
-  getUser(): Observable<UserClass> {
-    return this.http.get<UserClass>(this.userUrl)
+  getUser(): Observable<UserClass>{
+    return this.http.get<UserClass>(`${this.userUrl}/${this.user}`)
     {}
-
   }
   getUserRepos() {
     return this.http.get(this.repoUrl,
@@ -31,11 +30,21 @@ export class UserInfoService {
       }
     )
   }
+
+  getUsers() {
+    return this.http.get(`${this.userUrl}?per_page=10`,
+    {
+      headers: new HttpHeaders({
+        Authorization: environment.apiKey
+      })
+    }
+  )
 }
 
-// getUsers() {
 
-// }
+}
+
+
 
 // getRepos() {
 

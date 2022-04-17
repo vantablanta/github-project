@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faSearch, faUsers } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-repos',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./repos.component.css']
 })
 export class ReposComponent implements OnInit {
+  faSearch = faSearch
+  faUsers = faUsers
 
   constructor() { }
 
