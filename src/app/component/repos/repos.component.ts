@@ -1,6 +1,7 @@
 import { Component, OnInit, Input,Output} from '@angular/core';
 import { faSearch, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { UsersService } from 'src/app/service/users.service';
+import { RepoClass } from 'src/app/repo-class';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ReposComponent implements OnInit {
   faSearch = faSearch
   faUsers = faUsers
 
-  userRepos:any =[]
+  userRepos:RepoClass[] =[]
 
   clicked: boolean = false 
 

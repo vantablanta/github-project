@@ -12,7 +12,7 @@
 <div class="row">
   <button type="button" class="btn badge text-light rounded mt-1 col p-1" *ngFor="let repo of userRepos index as i">
     <span [ngStyle]="{'background-color':'#199bf3'}" class="badge text-dark rounded p-2">
-      <a target="blank" [href]="repo.name" class="view-btn">{{repo.name}}</a>
+      <a target="blank" [href]="repo.html_url" class="view-btn">{{repo.name}}</a>
     </span>
   </button>
 </div>

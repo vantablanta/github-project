@@ -29,7 +29,6 @@ export class UsersComponent implements OnInit {
     this.usersService.filterUser(this.userName).subscribe(
       (data: any) => {
         this.users = data
-        console.log(this.users)
       }
     )
   }
