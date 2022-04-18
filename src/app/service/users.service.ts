@@ -21,8 +21,14 @@ export class UsersService {
    }
 
   getUsers(): Observable<UserClass>{
-    return this.http.get<UserClass>(`${this.apiUrl}/${this.user}`)
-    {}
+    return this.http.get<UserClass>(`${this.apiUrl}/${this.user}`,
+      {
+        headers: new HttpHeaders({
+          Authorization: environment.apiKey
+        })
+      }
+    )
+    
   }
   // getUserRepos() {
   //   return this.http.get(`${this.apiUrl}/${this.user}/repos?per_page=100`,
@@ -36,7 +42,11 @@ export class UsersService {
 
   filterUser(username:string){
     this.user = username
-    return this.http.get<UserClass>(`${this.apiUrl}/${this.user}`) 
+    return this.http.get<UserClass>(`${this.apiUrl}/${this.user}`,{
+      headers: new HttpHeaders({
+        Authorization: environment.apiKey
+      })
+    }) 
   }
 
   filterUserRepo(username:string){

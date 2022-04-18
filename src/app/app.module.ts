@@ -11,6 +11,7 @@ import { LandingComponent } from './component/landing/landing.component';
 import { NavComponent } from './component/nav/nav.component';
 import { UsersComponent } from './component/users/users.component';
 import { ReposComponent } from './component/repos/repos.component';
+import { HideDirective } from './directive/hide.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReposComponent } from './component/repos/repos.component';
     LandingComponent,
     NavComponent,
     UsersComponent,
-    ReposComponent
+    ReposComponent,
+    HideDirective
   ],
   imports: [
     BrowserModule,

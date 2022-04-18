@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,} from '@angular/core';
+import { Component, OnInit, Input,Output} from '@angular/core';
 import { faSearch, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { UsersService } from 'src/app/service/users.service';
 
@@ -11,11 +11,14 @@ import { UsersService } from 'src/app/service/users.service';
 export class ReposComponent implements OnInit {
 
   @Input() name!: string 
+  
 
   faSearch = faSearch
   faUsers = faUsers
 
   userRepos:any =[]
+
+  clicked: boolean = false 
 
   constructor(private usersService: UsersService) { }
 
@@ -24,10 +27,9 @@ export class ReposComponent implements OnInit {
     this.usersService.filterUserRepo(this.name).subscribe(
       (data: any) => {
         this.userRepos = data
-        console.log(this.userRepos)
       }
     )
-
+      this.clicked = !this.clicked
   }
 
   ngOnInit(): void {

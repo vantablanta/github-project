@@ -1,11 +1,28 @@
+<div *ngIf="clicked; then display else hide"></div>
+<ng-template #hide>
+  <button type="button" class="btn btn-secondary" (click)="findUserRepos()">View Repos</button>
+</ng-template>
 
-<button type="button" class="btn btn-secondary" (click)="findUserRepos()" >View Repos</button>
+<ng-template #display>
+  <button appHide type="button" class="btn btn-secondary" (click)="findUserRepos()">View Repos</button>
+</ng-template>
 
 <div class="row">
-  <p class="float-end fs-3">Repositories</p>
-  <div class="col p-1" *ngFor="let repo of userRepos index as i">
-      <span class="badge bg-light text-dark rounded p-2">
-        {{repo.name}}
-      </span>
-  </div>
+  <button type="button" class="btn badge text-dark rounded mt-1 col p-1" *ngFor="let repo of userRepos index as i">
+    <span [ngStyle]="{'background-color':'#7bc8f9'}" class="badge text-dark rounded p-2">
+      <a target="blank" [href]="repo.name" class="view-btn">{{repo.name}}</a>
+    </span>
+  </button>
 </div>
+
+
+
+<!-- <button type="button" class="btn btn-secondary" (click)="findUserRepos()">View Repos</button>
+
+  <div class="row">
+    <div class="col p-1" *ngFor="let repo of userRepos index as i">
+        <span class="badge bg-light text-dark rounded p-2">
+          {{repo.name}}
+        </span>
+    </div>
+  </div> -->

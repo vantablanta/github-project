@@ -10,7 +10,8 @@
     </div>
 </div>
 
-  <div class="row">
+<div class="row d-flex justify-content-center align-items-center">
+  <div class="row col-md-6">
     <div *ngIf="users" class="float-start m-1 row  col-md-6 mt-4">
       <div class="card py-4 col-md-4">
         <div class="d-flex justify-content-center align-items-center">
@@ -22,10 +23,14 @@
           <h4 class="mt-3">{{users.login}}</h4>
           <div class="row">
             <div class="position-relative mt-3 col-md-6">
+
+
               <button [ngStyle]="{'background-color':'#7bc8f9'}" type="button"
                 class="btn btn-light badge text-dark rounded p-2 mt-1">
                 <a target="blank" [href]="users.html_url" class="view-btn">Repositories</a>
               </button>
+
+              
             </div>
             <div class="position-relative mt-3 col-md-6">
               <button [ngStyle]="{'background-color':'#32c48a'}" type="button"
@@ -37,11 +42,10 @@
         </div>
       </div>
     </div>
+
   </div>
 
-  
-
- <app-repos *ngIf="users"  [name]="userName"  class="col-md-6"></app-repos>
+<app-repos *ngIf="users"  [name]="userName"  class="col-md-6"></app-repos> 
 
  
 </div>
