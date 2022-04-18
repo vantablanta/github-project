@@ -1,24 +1,11 @@
-<!-- <div class="container-fluid" >
-    <div class="row height d-flex justify-content-center align-items-center">
-      <div class="col-md-6">
-        <form action="" class="form">
-          <fa-icon class="i fa-search" [icon]="faSearch" [ngStyle]="{'color': '#7bc8f9'}"></fa-icon>
-          <input type="text" class="form-control form-input" placeholder="Enter Username To See Repositories">
-          <span class="left-pan">
-            <fa-icon class="i fa-microphone" [icon]="faUsers" [ngStyle]="{'color': '#f59840'}"></fa-icon>
-          </span>
-        </form>
-      </div>
-    </div>
 
-</div> -->
-
+<button type="button" class="btn btn-secondary" (click)="findUserRepos()" >View Repos</button>
 
 <div class="row">
   <p class="float-end fs-3">Repositories</p>
   <div class="col p-1" *ngFor="let repo of userRepos index as i">
       <span class="badge bg-light text-dark rounded p-2">
-          {{repo.name}}
+        {{repo.name}}
       </span>
   </div>
 </div>

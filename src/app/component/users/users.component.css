@@ -67,10 +67,8 @@
 }
 
 
-.search{
-    position: relative;
-    top: -1vh;
-    background-color: #f59840;
-    border-color: #f59840;
-}
 
+.view-btn {
+    text-decoration: none;
+    color: black;
+}

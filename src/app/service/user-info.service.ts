@@ -38,16 +38,7 @@ export class UserInfoService {
   //   return this.http.get<UserClass>(`${this.apiUrl}/${this.user}`) 
   // }
 
-  // filterUserRepo(username:string){
-  //   this.user = username
-  //   return this.http.get(`${this.apiUrl}/${this.user}/repos?per_page=100`,
-  //   {
-  //     headers: new HttpHeaders({
-  //       Authorization: environment.apiKey
-  //     })
-  //   }
-  // )
-  // }
+
 
 
 }

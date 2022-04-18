@@ -6,9 +6,6 @@
             <fa-icon class="i fa-search" [icon]="faSearch" [ngStyle]="{'color': '#7bc8f9'}"></fa-icon>
             <input [(ngModel)]="userName" name="userName" type="search" class="form-control form-input"
                 (keyup)="findUser()" placeholder="Search Users ...">
-            <!-- <span class="left-pan">
-                <fa-icon class="i fa-microphone" [icon]="faUsers" [ngStyle]="{'color': '#f59840'}"></fa-icon>
-            </span> -->
         </form>
     </div>
 </div>
@@ -44,7 +41,7 @@
 
   
 
- <app-repos class="col-md-6"></app-repos>
+ <app-repos *ngIf="users"  [name]="userName"  class="col-md-6"></app-repos>
 
  
 </div>

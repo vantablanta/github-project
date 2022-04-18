@@ -17,6 +17,7 @@ export class LandingComponent implements OnInit {
   faSearch = faSearch
 
   userInfo:UserClass = new UserClass("",0,0,0,"","")
+  
   userRepos:any =[]
 
   userName!: string

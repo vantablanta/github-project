@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input,} from '@angular/core';
 import { faSearch, faUsers } from '@fortawesome/free-solid-svg-icons';
-import { UserInfoService } from 'src/app/service/user-info.service';
+import { UsersService } from 'src/app/service/users.service';
 
 
 @Component({
@@ -9,15 +9,26 @@ import { UserInfoService } from 'src/app/service/user-info.service';
   styleUrls: ['./repos.component.css']
 })
 export class ReposComponent implements OnInit {
+
+  @Input() name!: string 
+
   faSearch = faSearch
   faUsers = faUsers
 
   userRepos:any =[]
 
-  constructor(private userInfoService: UserInfoService) { }
+  constructor(private usersService: UsersService) { }
 
 
-  findUserRepos(){}
+  findUserRepos(){
+    this.usersService.filterUserRepo(this.name).subscribe(
+      (data: any) => {
+        this.userRepos = data
+        console.log(this.userRepos)
+      }
+    )
+
+  }
 
   ngOnInit(): void {
 
