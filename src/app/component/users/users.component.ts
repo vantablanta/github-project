@@ -34,18 +34,7 @@ export class UsersComponent implements OnInit {
     )
   }
 
-  findRepos(){
-    
-  }
 
-  ngOnInit(): void {
-  //   this.usersService.getUsers().subscribe(
-  //     (data:any) => {
-  //      this.users = data
-  //      console.log(this.users)
-  //     }
-      
-  //   )
- }
+  ngOnInit(): void {}
 
 }

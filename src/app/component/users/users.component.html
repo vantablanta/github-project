@@ -2,75 +2,84 @@
 
   <div class="row height d-flex justify-content-center align-items-center mb-5">
     <div class="col-md-6">
-      <form action="" class="form">
-        <fa-icon class="i fa-search" [icon]="faSearch" [ngStyle]="{'color': '#7bc8f9'}"></fa-icon>
-        <input [(ngModel)]="userName" name="userName" type="search" class="form-control form-input" (keyup)="findUser()"
-          placeholder="Search Users ...">
-      </form>
+        <form action="" class="form">
+            <fa-icon class="i fa-search" [icon]="faSearch" [ngStyle]="{'color': '#7bc8f9'}"></fa-icon>
+            <input [(ngModel)]="userName" name="userName" type="search" class="form-control form-input"
+                (keyup)="findUser()" placeholder="Search Users ...">
+        </form>
     </div>
-  </div>
+</div>
 
-  <div class="row d-flex justify-content-center align-items-center">
-    <div class="row">
-      <div *ngIf="users" class="float-start m-1 row  col-md-6 mt-4">
-        <div class="card py-4 col-md-4 w-100">
-          <div class="d-flex justify-content-center align-items-center">
-            <div class="round-image">
-              <img [src]="users.avatar_url" class="rounded-circle" width="97">
-            </div>
+<div class="row d-flex justify-content-center align-items-center">
+  <div class="row col-md-6">
+    <div *ngIf="users" class="float-start m-1 row  col-md-6 mt-4">
+      <div class="card py-4 col-md-4 w-100 h-100">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="round-image">
+            <img [src]="users.avatar_url" class="rounded-circle" width="97">
           </div>
-          <div class="text-center">
-            <h4 class="mt-3">{{users.login}}</h4>
-            <div class="row">
-              <div class="position-relative mt-3 col-md-6">
-                <span class="badge text-dark rounded p-2 mt-1" [ngStyle]="{'background-color': '#be96f8'}">
+        </div>
+        <div class="text-center">
+          <h4 class="mt-3">{{users.login}}</h4>
+          <div class="row">
+            <div class="position-relative mt-3 col-md-6">
+              <span class="badge text-dark rounded p-2 mt-1" [ngStyle]="{'background-color': '#be96f8'}">
                   Repositories
                   <fa-icon class="ms-2" [icon]="faFileCode"></fa-icon>
-                  <span class="position-absolute top-0 p-1 mb-2 text-light translate-middle badge rounded-pill"
-                    [ngStyle]="{'background-color': '#000'}">
-                    {{users.public_repos}}
+                  <span
+                      class="position-absolute top-0 p-1 mb-2 text-light translate-middle badge rounded-pill"
+                      [ngStyle]="{'background-color': '#000'}">
+                      {{users.public_repos}}
                   </span>
-                </span>
-              </div>
+              </span>
+          </div>
 
-              <div class="position-relative mt-3 col-md-6">
-                <span class="badge text-dark rounded p-2 mt-1" [ngStyle]="{'background-color': '#f59840'}">
+            <div class="position-relative mt-3 col-md-6">
+              <span class="badge text-dark rounded p-2 mt-1" [ngStyle]="{'background-color': '#f59840'}" >
                   Followers
-                  <fa-icon class="ms-2 text-dark" [icon]="faHeart"></fa-icon>
-                  <span class="position-absolute top-0 p-1 mb-2 text-light translate-middle badge rounded-pill"
-                    [ngStyle]="{'background-color': '#000'}">
-                    {{users.followers}}
+                  <fa-icon class="ms-2 text-dark" [icon]="faHeart" ></fa-icon>
+                  <span
+                      class="position-absolute top-0 p-1 mb-2 text-light translate-middle badge rounded-pill"
+                      [ngStyle]="{'background-color': '#000'}">
+                      {{users.followers}}
                   </span>
-                </span>
-              </div>
+              </span>
+          </div>
 
-              <div class="position-relative mt-3 col-md-6">
-                <span class="badge text-dark rounded p-2 mt-1" [ngStyle]="{'background-color': '#7bc8f9'}">
+            <div class="position-relative mt-3 col-md-6">
+              <span class="badge text-dark rounded p-2 mt-1" [ngStyle]="{'background-color': '#7bc8f9'}" >
                   Following
-                  <fa-icon class="ms-2 text-dark" [icon]="faUsers"></fa-icon>
-                  <span class="position-absolute top-0 p-1 mb-2 text-light translate-middle badge rounded-pill"
-                    [ngStyle]="{'background-color': '#000'}">
-                    {{users.following}}
+                  <fa-icon class="ms-2 text-dark" [icon]="faUsers" ></fa-icon>
+                  <span
+                      class="position-absolute top-0 p-1 mb-2 text-light translate-middle badge rounded-pill"
+                      [ngStyle]="{'background-color': '#000'}">
+                      {{users.following}}
                   </span>
-                </span>
-              </div>
+              </span>
+          </div>
 
 
 
-              <div class="position-relative mt-3 col-md-6">
-                <button [ngStyle]="{'background-color':'#32c48a'}" type="button"
-                  class="btn btn-light badge text-dark rounded p-2 mt-1">
-                  <a target="blank" [href]="users.html_url" class="view-btn">View User</a>
-                  <fa-icon class="ms-2" [icon]="faEye"></fa-icon>
-                </button>
-              </div>
+            <div class="position-relative mt-3 col-md-6">
+              <button [ngStyle]="{'background-color':'#32c48a'}" type="button"
+                class="btn btn-light badge text-dark rounded p-2 mt-1">
+                <a target="blank" [href]="users.html_url" class="view-btn">View User</a>
+                <fa-icon class="ms-2" [icon]="faEye"></fa-icon>
+              </button>
             </div>
           </div>
         </div>
       </div>
-
     </div>
-
-    <app-repos *ngIf="users" [name]="userName" class="col-md-6"></app-repos>
-
   </div>
+
+<app-repos *ngIf="users"  [name]="userName"  class="col-md-6"></app-repos> 
+
+</div>
+
+
+
+
+
+
+ 

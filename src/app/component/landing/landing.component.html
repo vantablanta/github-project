@@ -1,21 +1,4 @@
 <div class="container">
-
-    <!-- <div class="row height d-flex justify-content-center align-items-center mb-5">
-        <div class="col-md-6">
-            <form action="" class="form">
-                <fa-icon class="i fa-search" [icon]="faSearch" [ngStyle]="{'color': '#7bc8f9'}"></fa-icon>
-                <input [(ngModel)]="userName" name="userName" type="search" class="form-control form-input"
-                    (keyup)="findUser()" placeholder="Search Users ...">
-                <span class="left-pan">
-                    <fa-icon class="i fa-microphone" [icon]="faUsers" [ngStyle]="{'color': '#f59840'}"></fa-icon>
-                </span>
-            </form>
-        </div>
-    </div>
- -->
-
-
-
     <div class="card m-3">
         <div class="content row">
             <div class="col-md-6">
@@ -61,7 +44,7 @@
                                 </span>
                             </span>
                         </div>
-                        
+
                         <div class="position-relative mt-3 col-md-6">
                             <button type="button" class="btn btn-light badge bg-light text-dark rounded p-2 mt-1">
                                 <a target="blank" [href]="userInfo.html_url" class="view-btn">View</a>
@@ -72,8 +55,8 @@
 
                 </div>
             </div>
-            
-            
+
+
             <div class="row col-md-6 p-5">
                 <p class="float-end fs-3">Repositories</p>
                 <div class="col p-1" *ngFor="let repo of userRepos index as i">
@@ -81,7 +64,7 @@
                         {{repo.name}}
                     </span>
                 </div>
-              </div>
+            </div>
 
 
         </div>

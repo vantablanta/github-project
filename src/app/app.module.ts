@@ -12,6 +12,7 @@ import { NavComponent } from './component/nav/nav.component';
 import { UsersComponent } from './component/users/users.component';
 import { ReposComponent } from './component/repos/repos.component';
 import { HideDirective } from './directive/hide.directive';
+import { AboutComponent } from './component/about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HideDirective } from './directive/hide.directive';
     NavComponent,
     UsersComponent,
     ReposComponent,
-    HideDirective
+    HideDirective,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
