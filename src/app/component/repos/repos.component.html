@@ -12,3 +12,13 @@
     </div>
 
 </div> -->
+
+
+<div class="row">
+  <p class="float-end fs-3">Repositories</p>
+  <div class="col p-1" *ngFor="let repo of userRepos index as i">
+      <span class="badge bg-light text-dark rounded p-2">
+          {{repo.name}}
+      </span>
+  </div>
+</div>

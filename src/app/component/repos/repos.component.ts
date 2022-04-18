@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faSearch, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { UserInfoService } from 'src/app/service/user-info.service';
 
 
 @Component({
@@ -11,9 +12,19 @@ export class ReposComponent implements OnInit {
   faSearch = faSearch
   faUsers = faUsers
 
-  constructor() { }
+  userRepos:any =[]
+
+  constructor(private userInfoService: UserInfoService) { }
+
+
+  findUserRepos(){}
 
   ngOnInit(): void {
+
+    this.userInfoService.getUserRepos().subscribe(
+      (response: any)=>{
+        this.userRepos = response
+    })
   }
 
 }

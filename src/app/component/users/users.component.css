@@ -1,40 +1,4 @@
-.form {
-    position: relative
-}
-
-.form .fa-search {
-    position: absolute;
-    top: 18px;
-    left: 20px;
-    color: #9ca3af
-}
-
-.form span {
-    position: absolute;
-    right: 1px;
-    top: 2px;
-    padding: 10px;
-
-}
-
-.left-pan {
-    padding-left: 7px;
-}
-
-.left-pan .i {
-    padding-left: 8px;
-}
-
-.form-input {
-    height: 55px;
-    text-indent: 33px;
-    border-radius: 10px
-}
-
-.form-input:focus {
-    box-shadow: none;
-    border: none
-}
+/* 
 
 .card {
     width: 400px;
@@ -53,15 +17,6 @@
     align-items: center
 }
 
-
-.search{
-    position: relative;
-    top: -1vh;
-    background-color: #f59840;
-    border-color: #f59840;
-}
-
-
 .content {
     font-size: 13px
 }
@@ -70,12 +25,7 @@
     box-shadow: 0 0 40px rgba(51, 51, 51, .1)
 }
 
-.view-btn {
-    text-decoration: none;
-    color: black;
-}
 
-.test{
-    position: absolute ;
 
-}
+
+ */
