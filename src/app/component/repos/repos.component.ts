@@ -1,5 +1,5 @@
 import { Component, OnInit, Input,Output} from '@angular/core';
-import { faSearch, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faUsers, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { UsersService } from 'src/app/service/users.service';
 import { RepoClass } from 'src/app/repo-class';
 
@@ -16,6 +16,7 @@ export class ReposComponent implements OnInit {
 
   faSearch = faSearch
   faUsers = faUsers
+  faTimes = faTimes
 
   userRepos:RepoClass[] =[]
 

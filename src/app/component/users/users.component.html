@@ -13,7 +13,7 @@
 <div class="row d-flex justify-content-center align-items-center">
   <div class="row col-md-6">
     <div *ngIf="users" class="float-start m-1 row  col-md-6 mt-4">
-      <div class="card py-4 col-md-4 w-100 h-100">
+      <div class="card py-4 col-md-6">
         <div class="d-flex justify-content-center align-items-center">
           <div class="round-image">
             <img [src]="users.avatar_url" class="rounded-circle" width="97">
@@ -73,7 +73,7 @@
     </div>
   </div>
 
-<app-repos *ngIf="users"  [name]="userName"  class="col-md-6"></app-repos> 
+<app-repos *ngIf="users"  [name]="userName"  class="col-md-6 float-end" ></app-repos> 
 
 </div>
 

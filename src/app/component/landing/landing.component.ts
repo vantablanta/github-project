@@ -16,7 +16,7 @@ export class LandingComponent implements OnInit {
   faEye = faEye
   faSearch = faSearch
 
-  userInfo:UserClass = new UserClass("",0,0,0,"","")
+  userInfo:UserClass = new UserClass("",0,0,0,"","", "")
   
   userRepos:any =[]
 
@@ -24,29 +24,11 @@ export class LandingComponent implements OnInit {
 
   constructor(private userInfoService: UserInfoService) { }
 
-
-
-  // findUser(){
-  //   this.userInfoService.filterUser(this.userName).subscribe(
-  //     (data: any) => {
-  //       this.userInfo = data
-  //     }
-  //   )
-  // }
-
-  // findRepo(){
-  //   this.userInfoService.filterUserRepo(this.userName).subscribe(
-  //     (data: any) => {
-        
-  //     }
-  //   )
-  // }
-
-
   ngOnInit(): void {
     this.userInfoService.getUser().subscribe(
       (response: UserClass)=>{
         this.userInfo = response
+        console.log(this.userInfo)
       })
     
       this.userInfoService.getUserRepos().subscribe(
