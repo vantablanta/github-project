@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div class="row height d-flex justify-content-center align-items-center mb-5">
+    <!-- <div class="row height d-flex justify-content-center align-items-center mb-5">
         <div class="col-md-6">
             <form action="" class="form">
                 <fa-icon class="i fa-search" [icon]="faSearch" [ngStyle]="{'color': '#7bc8f9'}"></fa-icon>
@@ -12,7 +12,7 @@
             </form>
         </div>
     </div>
-
+ -->
 
 
 
@@ -70,8 +70,16 @@
                     </div>
                 </div>
             </div>
-
-            <app-repos class="col-md-6 p-5"></app-repos>
+            
+            
+            <div class="row col-md-6 p-5">
+                <p class="float-end fs-3">Repositories</p>
+                <div class="col p-1" *ngFor="let repo of userRepos index as i">
+                    <span class="badge bg-light text-dark rounded p-2">
+                        {{repo.name}}
+                    </span>
+                </div>
+              </div>
 
 
         </div>

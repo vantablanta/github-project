@@ -17,6 +17,7 @@ export class LandingComponent implements OnInit {
   faSearch = faSearch
 
   userInfo:UserClass = new UserClass("",0,0,0,"","")
+  userRepos:any =[]
 
   userName!: string
 
@@ -24,13 +25,21 @@ export class LandingComponent implements OnInit {
 
 
 
-  findUser(){
-    this.userInfoService.filterUser(this.userName).subscribe(
-      (data: any) => {
-        this.userInfo = data
-      }
-    )
-  }
+  // findUser(){
+  //   this.userInfoService.filterUser(this.userName).subscribe(
+  //     (data: any) => {
+  //       this.userInfo = data
+  //     }
+  //   )
+  // }
+
+  // findRepo(){
+  //   this.userInfoService.filterUserRepo(this.userName).subscribe(
+  //     (data: any) => {
+        
+  //     }
+  //   )
+  // }
 
 
   ngOnInit(): void {
@@ -38,6 +47,12 @@ export class LandingComponent implements OnInit {
       (response: UserClass)=>{
         this.userInfo = response
       })
+    
+      this.userInfoService.getUserRepos().subscribe(
+        (response: any)=>{
+          this.userRepos = response
+      })
+    
     
   }
 

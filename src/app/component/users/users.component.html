@@ -1,7 +1,17 @@
-<!-- <div class="container-fluid">
+<div class="container-fluid">
 
-
-
+  <div class="row height d-flex justify-content-center align-items-center mb-5">
+    <div class="col-md-6">
+        <form action="" class="form">
+            <fa-icon class="i fa-search" [icon]="faSearch" [ngStyle]="{'color': '#7bc8f9'}"></fa-icon>
+            <input [(ngModel)]="userName" name="userName" type="search" class="form-control form-input"
+                (keyup)="findUser()" placeholder="Search Users ...">
+            <!-- <span class="left-pan">
+                <fa-icon class="i fa-microphone" [icon]="faUsers" [ngStyle]="{'color': '#f59840'}"></fa-icon>
+            </span> -->
+        </form>
+    </div>
+</div>
 
   <div class="row">
     <div *ngIf="users" class="float-start m-1 row  col-md-6 mt-4">
@@ -35,6 +45,8 @@
   
 
  <app-repos class="col-md-6"></app-repos>
+
+ 
 </div>
 
 
@@ -42,4 +54,4 @@
 
 
 
-  -->
+ 

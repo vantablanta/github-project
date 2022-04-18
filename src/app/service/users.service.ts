@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { UserClass } from '../user-class';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserInfoService {
+export class UsersService {
+
 
   private user!: string
   apiUrl = `https://api.github.com/users`
@@ -19,24 +20,24 @@ export class UserInfoService {
     this.user = "vantablanta"
    }
 
-  getUser(): Observable<UserClass>{
+  getUsers(): Observable<UserClass>{
     return this.http.get<UserClass>(`${this.apiUrl}/${this.user}`)
     {}
   }
-  getUserRepos() {
-    return this.http.get(`${this.apiUrl}/${this.user}/repos?per_page=40`,
-      {
-        headers: new HttpHeaders({
-          Authorization: environment.apiKey
-        })
-      }
-    )
-  }
-
-  // filterUser(username:string){
-  //   this.user = username
-  //   return this.http.get<UserClass>(`${this.apiUrl}/${this.user}`) 
+  // getUserRepos() {
+  //   return this.http.get(`${this.apiUrl}/${this.user}/repos?per_page=100`,
+  //     {
+  //       headers: new HttpHeaders({
+  //         Authorization: environment.apiKey
+  //       })
+  //     }
+  //   )
   // }
+
+  filterUser(username:string){
+    this.user = username
+    return this.http.get<UserClass>(`${this.apiUrl}/${this.user}`) 
+  }
 
   // filterUserRepo(username:string){
   //   this.user = username
@@ -51,10 +52,3 @@ export class UserInfoService {
 
 
 }
-
-
-
-// getRepos() {
-
-// }
-// // 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

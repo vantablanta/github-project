@@ -21,10 +21,7 @@ export class ReposComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.userInfoService.getUserRepos().subscribe(
-      (response: any)=>{
-        this.userRepos = response
-    })
+
   }
 
 }
