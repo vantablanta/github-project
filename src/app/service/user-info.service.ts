@@ -9,20 +9,22 @@ import { environment } from 'src/environments/environment';
 })
 export class UserInfoService {
 
-  user = "vantablanta"
-  userUrl = `https://api.github.com/users`
-  repoUrl = `https://api.github.com/users/${this.user}/repos?per_page=40`
+  private user!: string
+  apiUrl = `https://api.github.com/users`
+  // repoUrl = `https://api.github.com/users/repos?per_page=40`
   // "https://api.github.com/users/vantablanta/repos?per_page=100"
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.user = "vantablanta"
+   }
 
   getUser(): Observable<UserClass>{
-    return this.http.get<UserClass>(`${this.userUrl}/${this.user}`)
+    return this.http.get<UserClass>(`${this.apiUrl}/${this.user}`)
     {}
   }
   getUserRepos() {
-    return this.http.get(this.repoUrl,
+    return this.http.get(`${this.apiUrl}/${this.user}/repos?per_page=40`,
       {
         headers: new HttpHeaders({
           Authorization: environment.apiKey
@@ -31,14 +33,9 @@ export class UserInfoService {
     )
   }
 
-  getUsers() {
-    return this.http.get(`${this.userUrl}?per_page=10`,
-    {
-      headers: new HttpHeaders({
-        Authorization: environment.apiKey
-      })
-    }
-  )
+  filterUser(username:string){
+    this.user = username
+    return this.http.get<UserClass>(`${this.apiUrl}/${this.user}`) 
 }
 
 

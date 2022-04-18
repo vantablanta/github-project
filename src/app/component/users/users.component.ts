@@ -14,17 +14,23 @@ export class UsersComponent implements OnInit {
   faSearch = faSearch
   faUsers = faUsers
 
-  users : UserClass[] = []
+  users! : UserClass
+
+  userName!:string
   
 
   constructor(private userInfo: UserInfoService) { }
 
-  ngOnInit(): void {
-    this.userInfo.getUsers().subscribe(
-      (data:any) => {
-       this.users = data
+  findUser(){
+    this.userInfo.filterUser(this.userName).subscribe(
+      (data: any) => {
+        this.users = data
       }
     )
+  }
+
+  ngOnInit(): void {
+
   }
 
 }

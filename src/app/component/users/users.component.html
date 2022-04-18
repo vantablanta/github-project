@@ -1,60 +1,56 @@
-<div class="container-fluid" >
+<div class="container-fluid">
+
   <div class="row height d-flex justify-content-center align-items-center">
     <div class="col-md-6">
       <form action="" class="form">
         <fa-icon class="i fa-search" [icon]="faSearch" [ngStyle]="{'color': '#7bc8f9'}"></fa-icon>
-        <input type="text" class="form-control form-input" placeholder="Search Users ...">
+        <input [(ngModel)]="userName" name="userName" type="search" class="form-control form-input"
+          (keyup)="findUser()"   placeholder="Search Users ...">
         <span class="left-pan">
-          <fa-icon class="i fa-microphone" [icon]="faUsers" [ngStyle]="{'color': '#f59840'}"></fa-icon>
+          <button type="button" class="i btn search p-2 rounded-pill">Search</button>
         </span>
       </form>
     </div>
   </div>
 
-<div class="float-start m-1 row  mt-4" *ngFor="let user of users index as i">
-  <div class="card py-4 col-md-4">
-    <div class="d-flex justify-content-center align-items-center">
-      <div class="round-image">
-        <img [src]="user.avatar_url" class="rounded-circle" width="97">
+
+  <div class="row">
+    <div *ngIf="users" class="float-start m-1 row  col-md-6 mt-4">
+      <div class="card py-4 col-md-4">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="round-image">
+            <img [src]="users.avatar_url" class="rounded-circle" width="97">
+          </div>
+        </div>
+        <div class="text-center">
+          <h4 class="mt-3">{{users.login}}</h4>
+          <div class="row">
+            <div class="position-relative mt-3 col-md-6">
+              <button [ngStyle]="{'background-color':'#7bc8f9'}" type="button"
+                class="btn btn-light badge text-dark rounded p-2 mt-1">
+                <a target="blank" [href]="users.html_url" class="view-btn">Repositories</a>
+              </button>
+            </div>
+            <div class="position-relative mt-3 col-md-6">
+              <button [ngStyle]="{'background-color':'#32c48a'}" type="button"
+                class="btn btn-light badge text-dark rounded p-2 mt-1">
+                <a target="blank" [href]="users.html_url" class="view-btn">View User</a>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="text-center">
-      <h4 class="mt-3">{{user.login}}</h4>
-
-      <div class="row">
-        <div class="position-relative mt-3 col-md-6">
-          <button [ngStyle]="{'background-color':'#7bc8f9'}" type="button" class="btn btn-light badge text-dark rounded p-2 mt-1">
-            <a target="blank" [href]="user.html_url" class="view-btn">Repositories</a>
-          </button>
-        </div>
-        <div class="position-relative mt-3 col-md-6">
-          <button [ngStyle]="{'background-color':'#32c48a'}" type="button" class="btn btn-light badge text-dark rounded p-2 mt-1">
-            <a target="blank" [href]="user.html_url" class="view-btn">View User</a>
-          </button>
-        </div>
-      </div>
-
-    </div>
-
   </div>
 
+  
+
+ <app-repos class="col-md-6"></app-repos>
+</div>
 
 
 
 
 
 
-
-
-
-  <!-- <nav aria-label="...">
-    <ul class="pagination pagination-sm">
-      <li class="page-item active" aria-current="page">
-        <span class="page-link">1</span>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-    </ul>
-  </nav>-->
-</div> 
+ 

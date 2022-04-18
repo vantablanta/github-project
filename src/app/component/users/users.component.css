@@ -11,18 +11,18 @@
 
 .form span {
     position: absolute;
-    right: 17px;
-    top: 13px;
-    padding: 2px;
-    border-left: 1px solid #d1d5db
+    right: 1px;
+    top: 2px;
+    padding: 10px;
+
 }
 
 .left-pan {
-    padding-left: 7px
+    padding-left: 7px;
 }
 
 .left-pan .i {
-    padding-left: 10px
+    padding-left: 8px;
 }
 
 .form-input {
@@ -36,12 +36,8 @@
     border: none
 }
 
-.container {
-    height: 100vh
-}
-
 .card {
-    width: 200px;
+    width: 400px;
     padding: 15px;
     border: none;
     cursor: pointer;
@@ -57,29 +53,29 @@
     align-items: center
 }
 
+
+.search{
+    position: relative;
+    top: -1vh;
+    background-color: #f59840;
+    border-color: #f59840;
+}
+
+
 .content {
     font-size: 13px
-}
-
-.follow {
-    border-radius: 25px;
-    padding-right: 19px;
-    padding-left: 19px;
-    height: 42px;
-    font-size: 13px;
-    width: 130px;
-    background-color: #3827b1
-}
-
-.follow:hover {
-    background-color: #1a0a8c
 }
 
 .card:hover {
     box-shadow: 0 0 40px rgba(51, 51, 51, .1)
 }
 
-.view-btn{
+.view-btn {
     text-decoration: none;
     color: black;
+}
+
+.test{
+    position: absolute ;
+
 }
