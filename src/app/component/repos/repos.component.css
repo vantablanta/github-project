@@ -40,3 +40,8 @@
     color: black;
     
 }
+
+.times{
+    position: relative;
+    top: -1vh;
+}

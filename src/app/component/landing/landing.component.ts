@@ -31,7 +31,6 @@ export class LandingComponent implements OnInit {
     this.userInfoService.getUser().subscribe(
       (response: UserClass) => {
         this.userInfo = response
-        console.log(this.userInfo)
       })
 
     this.userInfoService.getUserRepos().subscribe(
