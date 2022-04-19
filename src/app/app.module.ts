@@ -13,7 +13,7 @@ import { UsersComponent } from './component/users/users.component';
 import { ReposComponent } from './component/repos/repos.component';
 import { HideDirective } from './directive/hide.directive';
 import { AboutComponent } from './component/about/about.component';
-import { ProfileAgePipe } from './pipe/profile-age.pipe';
+import { MultiplyGistsPipe } from './pipe/multiply-gists.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { ProfileAgePipe } from './pipe/profile-age.pipe';
     ReposComponent,
     HideDirective,
     AboutComponent,
-    ProfileAgePipe
+    MultiplyGistsPipe,
+
   ],
   imports: [
     BrowserModule,

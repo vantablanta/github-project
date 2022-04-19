@@ -16,13 +16,13 @@ export class LandingComponent implements OnInit {
   faEye = faEye
   faSearch = faSearch
 
-  userInfo: UserClass = new UserClass("", 0, 0, 0, "", "", "")
+  userInfo: UserClass = new UserClass("", 0, 0, 0, "", "", 0)
 
   userRepos: any = []
 
   userName!: string
 
-  date!: any
+
 
 
   constructor(private userInfoService: UserInfoService) { }
@@ -32,8 +32,6 @@ export class LandingComponent implements OnInit {
       (response: UserClass) => {
         this.userInfo = response
         console.log(this.userInfo)
-        this.date = new Date(this.userInfo.created_at)
-
       })
 
     this.userInfoService.getUserRepos().subscribe(
