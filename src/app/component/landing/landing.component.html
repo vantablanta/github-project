@@ -5,7 +5,7 @@
                 <div class="p-5">
                     <img class="rounded w-50" [src]="userInfo.avatar_url">
                     <h1 class="fs-3 text-light pt-3 pb-3">{{userInfo.login}}</h1>
-                    <h5>Profile Age: {{userInfo.created_at | profileAge}}</h5>
+                    <h5>Profile Age: {{date | profileAge }}</h5>
 
                     <div class="row gx-1 gy-1">
 

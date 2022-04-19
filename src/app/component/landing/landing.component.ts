@@ -16,27 +16,32 @@ export class LandingComponent implements OnInit {
   faEye = faEye
   faSearch = faSearch
 
-  userInfo:UserClass = new UserClass("",0,0,0,"","", "")
-  
-  userRepos:any =[]
+  userInfo: UserClass = new UserClass("", 0, 0, 0, "", "", "")
+
+  userRepos: any = []
 
   userName!: string
+
+  date!: any
+
 
   constructor(private userInfoService: UserInfoService) { }
 
   ngOnInit(): void {
     this.userInfoService.getUser().subscribe(
-      (response: UserClass)=>{
+      (response: UserClass) => {
         this.userInfo = response
         console.log(this.userInfo)
+        this.date = new Date(this.userInfo.created_at)
+
       })
-    
-      this.userInfoService.getUserRepos().subscribe(
-        (response: any)=>{
-          this.userRepos = response
+
+    this.userInfoService.getUserRepos().subscribe(
+      (response: any) => {
+        this.userRepos = response
       })
-    
-    
+
+
   }
 
 }
