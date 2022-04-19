@@ -1,5 +1,5 @@
 ## GithubSearch App
-This application allows you to easily search a user and check oout their info such as followers, following, repo and their personal github profile. The gist have been doubles using  a cutom pipe. The application is user friendly and can be optimized to return any infomation stored by github, on it users 
+This application allows you to easily search a user and check out their info such as followers, following, repo and their personal github profile. The gist have been doubled using  a custom pipe. The application is user friendly and can be optimized to return any infomation stored by github, on it users 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
 
 ## Developed By
@@ -35,4 +35,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Further help
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-You can also reach me at [Email](mailto:vantablanta@gmail.com).
+You can also reach me at [Email](mailto:vantablanta@gmail.com)

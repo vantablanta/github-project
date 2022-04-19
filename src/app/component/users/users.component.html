@@ -2,16 +2,15 @@
 
   <div class="row height d-flex justify-content-center align-items-center mb-5">
     <div class="col-md-6">
-        <form action="" class="form">
-            <fa-icon class="i fa-search" [icon]="faSearch" [ngStyle]="{'color': '#7bc8f9'}"></fa-icon>
-            <input [(ngModel)]="userName" name="userName" type="search" class="form-control form-input"
-                (keyup)="findUser()" placeholder="Search Users ...">
-        </form>
+      <form action="" class="form">
+        <fa-icon class="i fa-search" [icon]="faSearch" [ngStyle]="{'color': '#7bc8f9'}"></fa-icon>
+        <input [(ngModel)]="userName" name="userName" type="search" class="form-control form-input" (keyup)="findUser()"
+          placeholder="Search Users ...">
+      </form>
     </div>
-</div>
+  </div>
 
-<div class="row d-flex justify-content-center align-items-center">
-  <!-- <div class="row "> -->
+  <div class="row d-flex justify-content-center align-items-center">
     <div *ngIf="users" class="float-start m-1 row  col-md-6 mt-4">
       <div class="card py-4 col-md-6">
         <div class="d-flex justify-content-center align-items-center">
@@ -25,39 +24,36 @@
           <div class="row">
             <div class="position-relative mt-3 col-md-6">
               <span class="badge text-dark rounded p-2 mt-1" [ngStyle]="{'background-color': '#be96f8'}">
-                  Repositories
-                  <fa-icon class="ms-2" [icon]="faFileCode"></fa-icon>
-                  <span
-                      class="position-absolute top-0 p-1 mb-2 text-light translate-middle badge rounded-pill"
-                      [ngStyle]="{'background-color': '#000'}">
-                      {{users.public_repos}}
-                  </span>
+                Repositories
+                <fa-icon class="ms-2" [icon]="faFileCode"></fa-icon>
+                <span class="position-absolute top-0 p-1 mb-2 text-light translate-middle badge rounded-pill"
+                  [ngStyle]="{'background-color': '#000'}">
+                  {{users.public_repos}}
+                </span>
               </span>
-          </div>
+            </div>
 
             <div class="position-relative mt-3 col-md-6">
-              <span class="badge text-dark rounded p-2 mt-1" [ngStyle]="{'background-color': '#f59840'}" >
-                  Followers
-                  <fa-icon class="ms-2 text-dark" [icon]="faHeart" ></fa-icon>
-                  <span
-                      class="position-absolute top-0 p-1 mb-2 text-light translate-middle badge rounded-pill"
-                      [ngStyle]="{'background-color': '#000'}">
-                      {{users.followers}}
-                  </span>
+              <span class="badge text-dark rounded p-2 mt-1" [ngStyle]="{'background-color': '#f59840'}">
+                Followers
+                <fa-icon class="ms-2 text-dark" [icon]="faHeart"></fa-icon>
+                <span class="position-absolute top-0 p-1 mb-2 text-light translate-middle badge rounded-pill"
+                  [ngStyle]="{'background-color': '#000'}">
+                  {{users.followers}}
+                </span>
               </span>
-          </div>
+            </div>
 
             <div class="position-relative mt-3 col-md-6">
-              <span class="badge text-dark rounded p-2 mt-1" [ngStyle]="{'background-color': '#7bc8f9'}" >
-                  Following
-                  <fa-icon class="ms-2 text-dark" [icon]="faUsers" ></fa-icon>
-                  <span
-                      class="position-absolute top-0 p-1 mb-2 text-light translate-middle badge rounded-pill"
-                      [ngStyle]="{'background-color': '#000'}">
-                      {{users.following}}
-                  </span>
+              <span class="badge text-dark rounded p-2 mt-1" [ngStyle]="{'background-color': '#7bc8f9'}">
+                Following
+                <fa-icon class="ms-2 text-dark" [icon]="faUsers"></fa-icon>
+                <span class="position-absolute top-0 p-1 mb-2 text-light translate-middle badge rounded-pill"
+                  [ngStyle]="{'background-color': '#000'}">
+                  {{users.following}}
+                </span>
               </span>
-          </div>
+            </div>
 
 
 
@@ -72,15 +68,6 @@
         </div>
       </div>
     </div>
-  <!-- </div> -->
+    <app-repos (refreshEvent)="refreshWindow()" *ngIf="users" [name]="userName" class="m-3 p-3"></app-repos>
 
-<app-repos (refreshEvent)="refreshWindow()" *ngIf="users"  [name]="userName" class="m-3 p-3" ></app-repos> 
-
-</div>
-
-
-
-
-
-
- 
+  </div>
