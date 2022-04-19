@@ -1,15 +1,28 @@
-<fa-icon class="float-end times"  [icon]="faTimes" (click)="refresh()"></fa-icon>
+<div class="d-flex  justify-content-between m-5">
 
-<div class="row height d-flex justify-content-center align-items-center mb-5">
-  <div class="col-md-6">
-      <form action="" class="form">
-          <fa-icon class="i fa-search" [icon]="faSearch" [ngStyle]="{'color': '#7bc8f9'}"></fa-icon>
-          <input [(ngModel)]="repoName" name="userName" type="search" class="form-control form-input"
-              (keyup)="findRepo()" placeholder="Search Repo">
-      </form>
+  <div class="">
+    <div *ngIf="clicked; then display else hide"></div>
+    <ng-template #hide>
+      <button type="button" class="btn text-dark" [ngStyle]="{'background-color':'#f59840'}" (click)="findUserRepos()">
+        View Repos
+      </button>
+    </ng-template>
+
+    <ng-template #display>
+      <button appHide type="button" class="btn text-dark" [ngStyle]="{'background-color':'#f59840'}"
+        (click)="findUserRepos()">
+        View Repos
+      </button>
+    </ng-template>
   </div>
+ 
+  <fa-icon class="times " [icon]="faTimes" (click)="refresh()"></fa-icon>
+</div>
 
-  <div class="row">
+
+<div class="row height d-flex justify-content-center align-items-center mb-5" *ngIf="complete">
+
+  <div class="row" >
     <button type="button" class="btn badge text-light rounded mt-1 col p-1">
       <span [ngStyle]="{'background-color':'#f59840'}" class="badge text-dark rounded p-2">
         <a target="blank" [href]="repoName.html_url" class="view-btn">{{repoName.name}}</a>
@@ -18,22 +31,6 @@
   </div>
 </div>
 
-
-
-<div *ngIf="clicked; then display else hide"></div>
-<ng-template #hide>
-  <button type="button" class="btn text-dark" [ngStyle]="{'background-color':'#f59840'}"
-    (click)="findUserRepos()">
-    View Repos
-  </button>
-</ng-template>
-
-<ng-template #display>
-  <button appHide type="button" class="btn text-dark" [ngStyle]="{'background-color':'#f59840'}"
-    (click)="findUserRepos()">
-    View Repos
-  </button>
-</ng-template>
 
 <div class="row">
   <button type="button" class="btn badge text-light rounded mt-1 col p-1" *ngFor="let repo of userRepos index as i">

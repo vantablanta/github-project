@@ -4,6 +4,7 @@ import { UsersService } from 'src/app/service/users.service';
 import { RepoClass } from 'src/app/repo-class';
 
 
+
 @Component({
   selector: 'app-repos',
   templateUrl: './repos.component.html',
@@ -24,6 +25,7 @@ export class ReposComponent implements OnInit {
   repoName:any
 
   clicked: boolean = false
+  complete: boolean = false
 
   constructor(private usersService: UsersService) { }
 
@@ -32,7 +34,6 @@ export class ReposComponent implements OnInit {
     this.usersService.filterUserRepo(this.name).subscribe(
       (data: any) => {
         this.userRepos = data
-        console.log(this.userRepos)
       }
     )
     this.clicked = !this.clicked
@@ -44,6 +45,8 @@ export class ReposComponent implements OnInit {
         this.repoName = data
       }
     )
+    this.complete = true
+
   }
 
 
