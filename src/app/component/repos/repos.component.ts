@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { faSearch, faUsers, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { UsersService } from 'src/app/service/users.service';
 import { RepoClass } from 'src/app/repo-class';
@@ -11,7 +11,7 @@ import { RepoClass } from 'src/app/repo-class';
 })
 export class ReposComponent implements OnInit {
 
-  @Input() name!: string 
+  @Input() name!: string
   @Output() refreshEvent = new EventEmitter
 
 
@@ -19,24 +19,37 @@ export class ReposComponent implements OnInit {
   faUsers = faUsers
   faTimes = faTimes
 
-  userRepos:RepoClass[] =[]
+  userRepos: RepoClass[] = []
 
-  clicked: boolean = false 
+  repoName:any
+
+  clicked: boolean = false
 
   constructor(private usersService: UsersService) { }
 
 
-  findUserRepos(){
+  findUserRepos() {
     this.usersService.filterUserRepo(this.name).subscribe(
       (data: any) => {
         this.userRepos = data
+        console.log(this.userRepos)
       }
     )
-      this.clicked = !this.clicked
+    this.clicked = !this.clicked
   }
 
-  refresh(){
-     this.refreshEvent.emit()
+  findRepo() {
+    this.usersService.singleRepo(this.repoName).subscribe(
+      (data:any) => {
+        this.repoName = data
+      }
+    )
+  }
+
+
+
+  refresh() {
+    this.refreshEvent.emit()
   }
 
   ngOnInit(): void {

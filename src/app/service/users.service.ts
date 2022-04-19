@@ -11,13 +11,12 @@ export class UsersService {
 
 
   private user!: string
+  private repo!: string
   apiUrl = `https://api.github.com/users`
-  // repoUrl = `https://api.github.com/users/repos?per_page=40`
-  // "https://api.github.com/users/vantablanta/repos?per_page=100"
-
 
   constructor(private http: HttpClient) {
     this.user = "vantablanta"
+    this.repo = ""
    }
 
   getUsers(): Observable<UserClass>{
@@ -30,15 +29,6 @@ export class UsersService {
     )
     
   }
-  // getUserRepos() {
-  //   return this.http.get(`${this.apiUrl}/${this.user}/repos?per_page=100`,
-  //     {
-  //       headers: new HttpHeaders({
-  //         Authorization: environment.apiKey
-  //       })
-  //     }
-  //   )
-  // }
 
   filterUser(username:string){
     this.user = username
@@ -52,6 +42,17 @@ export class UsersService {
   filterUserRepo(username:string){
     this.user = username
     return this.http.get(`${this.apiUrl}/${this.user}/repos?per_page=100`,
+    {
+      headers: new HttpHeaders({
+        Authorization: environment.apiKey
+      })
+    }
+  )
+  }
+
+  singleRepo(repository:string){
+    this.repo = repository
+    return this.http.get(`https://api.github.com/repos/${this.user}/${this.repo}`,
     {
       headers: new HttpHeaders({
         Authorization: environment.apiKey

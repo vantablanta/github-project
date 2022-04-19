@@ -1,5 +1,23 @@
 <fa-icon class="float-end times"  [icon]="faTimes" (click)="refresh()"></fa-icon>
 
+<div class="row height d-flex justify-content-center align-items-center mb-5">
+  <div class="col-md-6">
+      <form action="" class="form">
+          <fa-icon class="i fa-search" [icon]="faSearch" [ngStyle]="{'color': '#7bc8f9'}"></fa-icon>
+          <input [(ngModel)]="repoName" name="userName" type="search" class="form-control form-input"
+              (keyup)="findRepo()" placeholder="Search Repo">
+      </form>
+  </div>
+
+  <div class="row">
+    <button type="button" class="btn badge text-light rounded mt-1 col p-1">
+      <span [ngStyle]="{'background-color':'#f59840'}" class="badge text-dark rounded p-2">
+        <a target="blank" [href]="repoName.html_url" class="view-btn">{{repoName.name}}</a>
+      </span>
+    </button>
+  </div>
+</div>
+
 
 
 <div *ngIf="clicked; then display else hide"></div>

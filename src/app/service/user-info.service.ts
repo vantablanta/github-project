@@ -11,9 +11,6 @@ export class UserInfoService {
 
   private user!: string
   apiUrl = `https://api.github.com/users`
-  // repoUrl = `https://api.github.com/users/repos?per_page=40`
-  // "https://api.github.com/users/vantablanta/repos?per_page=100"
-
 
   constructor(private http: HttpClient) {
     this.user = "vantablanta"
@@ -37,19 +34,4 @@ export class UserInfoService {
     )
   }
 
-  // filterUser(username:string){
-  //   this.user = username
-  //   return this.http.get<UserClass>(`${this.apiUrl}/${this.user}`) 
-  // }
-
-
-
-
 }
-
-
-
-// getRepos() {
-
-// }
-// // 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
