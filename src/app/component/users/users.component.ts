@@ -32,9 +32,6 @@ export class UsersComponent implements OnInit {
       }
     )
   }
-  refreshWindow(){
-    window.location.reload();
-  }
 
   ngOnInit(): void {}
 

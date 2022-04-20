@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { faSearch, faUsers, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { UsersService } from 'src/app/service/users.service';
 import { RepoClass } from 'src/app/repo-class';
@@ -13,7 +13,7 @@ import { RepoClass } from 'src/app/repo-class';
 export class ReposComponent implements OnInit {
 
   @Input() name!: string
-  @Output() refreshEvent = new EventEmitter
+
 
 
   faSearch = faSearch
@@ -52,7 +52,7 @@ export class ReposComponent implements OnInit {
 
 
   refresh() {
-    this.refreshEvent.emit()
+    window.location.reload()
   }
 
   ngOnInit(): void {
